@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "orderNumber": "60823560",
+      "date": "14.03.2025",
+      "time": "13:05",
+      "category": "Staal",
+      "product": "1x Pilaar",
+      "status": "voorbereiden"
+    },
+    {
+      "id": 2,
+      "orderNumber": "60823462",
+      "date": "14.03.2025",
+      "time": "13:08",
+      "category": "Hout",
+      "product": "1x Balk",
+      "status": "voorbereiden"
+    }
+  ]
+  
