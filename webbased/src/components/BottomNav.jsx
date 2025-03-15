@@ -1,19 +1,14 @@
+import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
-const BottomNav = ({ activeTab, onTabChange }) => {
-  const tabs = ["Geschiedenis", "Geannuleerd", "Klaar", "In Behandeling", "Voorbereiden"];
-
+const BottomNav = () => {
   return (
     <div className={styles.navbar}>
-      {tabs.map((tab) => (
-        <button 
-          key={tab} 
-          onClick={() => onTabChange(tab)}
-          className={`${styles.navItem} ${activeTab === tab ? styles.active : ""}`}
-        >
-          {tab}
-        </button>
-      ))}
+      <Link to="/geschiedenis" className={styles.navItem}>Geschiedenis</Link>
+      <Link to="/geannuleerd" className={styles.navItem}>Geannuleerd</Link>
+      <Link to="/klaar" className={styles.navItem}>Klaar</Link>
+      <Link to="/in-behandeling" className={styles.navItem}>In Behandeling</Link>
+      <Link to="/voorbereiden" className={styles.navItem}>Voorbereiden</Link>
     </div>
   );
 };
