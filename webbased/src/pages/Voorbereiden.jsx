@@ -1,13 +1,19 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import ordersData from "../data/orders.json";
 import styles from "../components/styles.module.css";
 
-const Voorbereiden = ({ onSelectOrder }) => {
+const Voorbereiden = () => {
   const [orders, setOrders] = useState([]);
+  const navigate = useNavigate(); // 🔥 React Router navigatie
 
   useEffect(() => {
     setOrders(ordersData);
   }, []);
+
+  const handleOrderClick = (orderId) => {
+    navigate(`/order/${orderId}`); // 🔗 Stuur naar de order details pagina
+  };
 
   return (
     <div className="p-4">
@@ -16,7 +22,7 @@ const Voorbereiden = ({ onSelectOrder }) => {
         <div
           key={order.id}
           className={styles.orderCard}
-          onClick={() => onSelectOrder(order)}
+          onClick={() => handleOrderClick(order.id)}
         >
           <p className="text-gray-500 text-sm">Order Nr. {order.orderNumber}</p>
           <p className="text-black font-bold">{order.product}</p>
